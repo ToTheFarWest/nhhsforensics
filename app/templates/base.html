@@ -1,0 +1,14 @@
+<html>
+  <head>
+    {% if title %}
+    <title>{{ title }} - NHHSForensics</title>
+    {% else %}
+    <title>NHHSForensics</title>
+    {% endif %}
+  </head>
+  <body>
+    <div>NHHSForensics: <a href="/index">Home</a> <a href="/signup">Tournament Signup</a> <a href="/login">Log In</a> <a href="/register">Register</a> </div>
+    <hr>
+    {% block content %}{% endblock %}
+  </body>
+</html>

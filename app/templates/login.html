@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1>Sign In</h1>
+	<form action="" method="post" name="login">
+		{{ form.csrf_token }}
+		{% if form.csrf_token.errors %}
+			<div class="warning">You have submitted an invalid CSRF token</div>
+		{% endif %}
+		<div>{{ form.username.label }}: {{ form.username(class="css_class") }}</div>
+		<div>{{ form.password.label }}: {{ form.password() }}</div>
+		<div>{{ form.remember_me.label }}: {{ form.remember_me() }}</div>
+		<div> <button type="submit" class="btn">Sign in</button></div>
+	</form>
+{% endblock %}

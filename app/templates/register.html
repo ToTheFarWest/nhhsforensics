@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+	<h1>Register</h1>
+	<form action="" method="post" name="register">
+		{{ form.csrf_token }}
+		{% if form.csrf_token.errors %}
+			<div class='warning'>You have submitted an invalid CSRF token</div>
+		{% endif %}
+		<div>{{ form.user_name.label }}: {{ form.user_name(class="css_class") }}</div>
+		<div>{{ form.first_name.label }}: {{ form.first_name(class="css_class") }}</div>
+		<div>{{ form.last_name.label }}: {{ form.last_name(class="css_class") }}</div>
+		<div>{{ form.email.label }}: {{ form.email(class="css_class") }}</div>
+		<div>{{ form.password.label }}: {{ form.password() }}</div>
+		<div>{{ form.confirm.label }}: {{ form.confirm() }}</div>
+		<div> <button type="submit" class="btn">Register</button> </div>
+	</form>
+{% endblock %}
